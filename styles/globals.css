@@ -25,7 +25,7 @@
   }
 
   li {
-    @apply cursor-point;
+    @apply cursor-pointer;
   }
 
   button {
