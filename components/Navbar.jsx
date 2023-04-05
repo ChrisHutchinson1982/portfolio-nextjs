@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const NavBar = () => {
@@ -9,8 +10,25 @@ const NavBar = () => {
           src="/../public/assets/navLogo.png"
           alt="/"
           width="125"
-          height="100"
+          height="125"
         />
+        <ul className="hidden md:flex">
+          {[
+            { path: "", title: "Home" },
+            { path: "", title: "About" },
+            { path: "", title: "Skills" },
+            { path: "", title: "Projects" },
+            { path: "", title: "Contact" },
+          ].map((link) => {
+            return (
+              <Link href={`/${link.path}`}>
+                <li className="ml-10 text-sum uppercase hover:border-b">
+                  {link.title}
+                </li>
+              </Link>
+            );
+          })}
+        </ul>
       </div>
     </div>
   );
